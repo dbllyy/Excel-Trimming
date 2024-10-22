@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Status Terminal ATM</title>
+
+    <script src="js/xlsx.full.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="logo">
+            <img src="logo.png" alt="Bank Kalteng Logo"> <!-- Replace with your logo file -->
+        </div>
+        <div class="upload-section">
+            <label for="uploadExcel">Pilih file Excel:</label>
+            <input type="file" id="uploadExcel" accept=".xls,.xlsx">
+        </div>
+
+        <div class="actions">
+            <input type="text" id="searchInput" placeholder="Cari Resi..." onkeyup="filterTable()">
+            <label>
+                <input type="checkbox" id="depositCheckbox" onchange="filterTable()"> Tampilkan hanya deposit <= 50 juta
+                    </label>
+                    <br><br>
+                    <button onclick="exportToExcel()">Ekspor ke Excel</button>
+        </div>
+
+        <table id="excelTable">
+            <thead>
+                <tr>
+                    <th>Profile</th>
+                    <th>Lokasi</th>
+                    <th>Status Koneksi</th>
+                    <th>Status Terminal</th>
+                    <th>Resi</th>
+                    <th>CashBox</th>
+                    <th>Deposit (RP)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Data dari Excel akan dimasukkan di sini -->
+            </tbody>
+        </table>
+
+        <div class="footer">
+            © Divisi TI Bank Kalteng
+        </div>
+    </div>
+
+    <script src="js/scripts.js"></script>
+
+</body>
+
+</html>
+</body>
+
+</html>
